@@ -1,0 +1,45 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container form {
+  background-color: #ccc;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.container form h2 {
+  padding-bottom: 10px;
+}
+.container form .message {
+  padding: 10px;
+  background-color: rgb(245, 146, 146);
+  display: inline-block;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.container form label {
+  padding-bottom: 10px;
+  display: block;
+}
+.container form input {
+  margin-bottom: 20px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.container form button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+}
