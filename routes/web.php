@@ -20,3 +20,9 @@ Route::get('/', function () {
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/loginDo', [LoginController::class, 'loginDo'])->name('loginDo');
+
+// Rotas protegidas
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/admin', [LoginController::class, 'admin'])->name('admin');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+});

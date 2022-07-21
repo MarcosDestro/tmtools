@@ -3,6 +3,10 @@
 
 - Rodar as migrations
     php artisan migrate:refresh
+
+- Inserir usuário:
+    email: teste@teste.com
+    senha: $2y$10$8qb3ynnxOuwm4Y7E4wiWbOa/fQPRxGmy39mOEqnLNKTKh96UP3XX
 - Rodar o npm
     npm install
 - Rodar o servidor
@@ -10,3 +14,7 @@
 - Rodar o npm
     npm run dev    ou
     npm run watch (Fica observando)
+
+Para logar
+    email: teste@teste.com
+    senha: teste
