@@ -17,4 +17,5 @@ mix
     ])
     .sass('resources/scss/style.scss', 'public/css/')
     .sass('resources/scss/login.scss', 'public/css/')
+    // .copyDirectory('resources/svgs', 'public/svgs')
     ;
