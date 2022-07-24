@@ -6,7 +6,7 @@
 
 - Inserir usuário:
     email: teste@teste.com
-    senha: $2y$10$8qb3ynnxOuwm4Y7E4wiWbOa/fQPRxGmy39mOEqnLNKTKh96UP3XX
+    senha: $2y$10$aSGeXpGx9DMiBXG7i.N4DeRhIMD8QwHwUWnACIPld91JnhTBLF/GG
 - Rodar o npm
     npm install
 - Rodar o servidor
@@ -18,3 +18,7 @@
 Para logar
     email: teste@teste.com
     senha: teste
+
+Adicionar novos campos:
+    Adicionar no fillable do modelo
+    Adicionar no validade con controller

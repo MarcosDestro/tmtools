@@ -12,18 +12,12 @@ class LoginController extends Controller
     {
         /** Verifica se existe uma sessão ativa, caso sim redirecione */
         if (Auth::check() === true) {
-            return redirect()->route('admin');
+            return redirect()->route('tmtoolsAll');
         }
 
         return view('login');
     }
 
-    public function admin()
-    {
-        return view('admin', [
-            'user_name' => Auth::user()->name
-        ]);
-    }
 
     public function loginDo(Request $request)
     {
@@ -37,7 +31,7 @@ class LoginController extends Controller
 
         // Se o email for inválido...
         if (!filter_var($request->email, FILTER_VALIDATE_EMAIL)) {
-            $msg = "informe um e-mail válido";
+            $msg = "Informe um e-mail válido";
             return redirect()->route('login')->with([
                 'message' => $msg,
             ]);
@@ -50,7 +44,7 @@ class LoginController extends Controller
 
         // Se as credenciais para login não forem válidas...
         if (!Auth::attempt($credentials)) {
-            $msg = "Dados não conferem";
+            $msg = "Dados não conferem!";
             return redirect()->route('login')->with([
                 'message' => $msg
             ]);
@@ -60,7 +54,7 @@ class LoginController extends Controller
         $this->authenticated($request->getClientIp());
 
         // Direciona para a rota de admin
-        return redirect()->route('admin');
+        return redirect()->route('tmtoolsAll');
     }
 
     private function authenticated(string $ip)

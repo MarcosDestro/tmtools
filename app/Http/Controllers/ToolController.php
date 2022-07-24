@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tool;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use function GuzzleHttp\Promise\all;
 
 class ToolController extends Controller
 {
@@ -11,9 +15,15 @@ class ToolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function tmtoolsAll()
     {
-        //
+        $user_name = Auth::user()->name;
+        $all_tools = Tool::all();
+
+        return view('tmtoolsAll', [
+            'user_name' => $user_name,
+            'all_tools' => $all_tools
+        ]);
     }
 
     /**
@@ -21,9 +31,9 @@ class ToolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createTool()
     {
-        //
+        return view('createTool');
     }
 
     /**
@@ -32,9 +42,23 @@ class ToolController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeTool(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'diameter' => ['required'],
+            'radius' => ['required'],
+            'length' => ['required'],
+        ]);
+
+        $toolCreate = Tool::create($request->all());
+
+        if (!$toolCreate->save()) {
+            return redirect()->back()->withInput()->withError();
+        }
+
+        return redirect()->route('tmtoolsAll')->with([
+            'message' => 'Ferramenta cadastrada com sucesso'
+        ]);;
     }
 
     /**

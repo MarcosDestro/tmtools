@@ -24,7 +24,7 @@
                 <div class="icon">        
                     <img src="{{ url(asset('/svgs/regular/envelope.svg')) }}" alt="">     
                 </div>
-                <input type="email" name="email" placeholder="E-mail">
+                <input type="email" name="email" placeholder="E-mail" autofocus>
             </div>
             <br>
             <div class="input-content">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ToolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,9 @@ Route::post('/loginDo', [LoginController::class, 'loginDo'])->name('loginDo');
 
 // Rotas protegidas
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/admin', [LoginController::class, 'admin'])->name('admin');
+    Route::get('/tmtools', [ToolController::class, 'tmtoolsAll'])->name('tmtoolsAll');
+    Route::get('/createtool', [ToolController::class, 'createTool'])->name('createTool');
+    Route::post('/storetool', [ToolController::class, 'storetool'])->name('storetool');
+
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
