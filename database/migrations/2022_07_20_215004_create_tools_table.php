@@ -15,6 +15,7 @@ class CreateToolsTable extends Migration
     {
         Schema::create('tools', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
             $table->float('diameter');
             $table->float('radius');
             $table->float('length');

@@ -74,7 +74,14 @@
             border-radius: 20px;
             margin-top: 30px;
             align-self: center;
-            color: rgb(77, 163, 210);
+            color: #4da3d2;
+            cursor: pointer;
+            transition: all linear 0.2s;
+
+            &:hover {
+                background-color: #ddd;
+                color: #4089b0;
+            }
         }
     }
 }

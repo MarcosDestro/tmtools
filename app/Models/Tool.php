@@ -10,6 +10,7 @@ class Tool extends Model
     use HasFactory;
 
     protected $fillable = [
+        'type',
         'diameter',
         'radius',
         'length'

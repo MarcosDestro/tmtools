@@ -44,11 +44,17 @@ class ToolController extends Controller
      */
     public function storeTool(Request $request)
     {
-        $validate = $request->validate([
+        $rules = [
+            'type' => ['required'],
             'diameter' => ['required'],
             'radius' => ['required'],
             'length' => ['required'],
-        ]);
+        ];
+        $messages = [
+            'required' => 'O campo :attribute é requerido.',
+        ];
+
+        $validate = $request->validate($rules, $messages);
 
         $toolCreate = Tool::create($request->all());
 
@@ -56,7 +62,7 @@ class ToolController extends Controller
             return redirect()->back()->withInput()->withError();
         }
 
-        return redirect()->route('tmtoolsAll')->with([
+        return redirect()->route('tmtoolsall')->with([
             'message' => 'Ferramenta cadastrada com sucesso'
         ]);;
     }
@@ -101,8 +107,12 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deletetool($id)
     {
-        //
+        Tool::destroy($id);
+
+        return redirect()->route('tmtoolsall')->with([
+            'message' => 'Ferramenta apagada com sucesso'
+        ]);;
     }
 }

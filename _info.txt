@@ -22,3 +22,5 @@ Para logar
 Adicionar novos campos:
     Adicionar no fillable do modelo
     Adicionar no validade con controller
+    Adicionar mensagem de validação e no arquivo pt-BR as traduções
+    Adicionar a persistência com old()

@@ -12,7 +12,7 @@ class LoginController extends Controller
     {
         /** Verifica se existe uma sessão ativa, caso sim redirecione */
         if (Auth::check() === true) {
-            return redirect()->route('tmtoolsAll');
+            return redirect()->route('tmtoolsall');
         }
 
         return view('login');
@@ -54,7 +54,7 @@ class LoginController extends Controller
         $this->authenticated($request->getClientIp());
 
         // Direciona para a rota de admin
-        return redirect()->route('tmtoolsAll');
+        return redirect()->route('tmtoolsall');
     }
 
     private function authenticated(string $ip)

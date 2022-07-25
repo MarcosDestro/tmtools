@@ -24,9 +24,11 @@ Route::post('/loginDo', [LoginController::class, 'loginDo'])->name('loginDo');
 
 // Rotas protegidas
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/tmtools', [ToolController::class, 'tmtoolsAll'])->name('tmtoolsAll');
+    Route::get('/tmtools', [ToolController::class, 'tmtoolsall'])->name('tmtoolsall');
     Route::get('/createtool', [ToolController::class, 'createTool'])->name('createTool');
     Route::post('/storetool', [ToolController::class, 'storetool'])->name('storetool');
+
+    Route::get('/deletetool/{id}', [ToolController::class, 'deletetool'])->name('deletetool');
 
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
