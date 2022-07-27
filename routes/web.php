@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/loginDo', [LoginController::class, 'loginDo'])->name('loginDo');
@@ -28,6 +28,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/createtool', [ToolController::class, 'createTool'])->name('createTool');
     Route::post('/storetool', [ToolController::class, 'storetool'])->name('storetool');
 
+    Route::get('/showtool/{id}', [ToolController::class, 'showtool'])->name('showtool');
+    Route::post('/updatetool/{id}', [ToolController::class, 'updatetool'])->name('updatetool');
     Route::get('/deletetool/{id}', [ToolController::class, 'deletetool'])->name('deletetool');
 
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

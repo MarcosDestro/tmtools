@@ -24,3 +24,5 @@ Adicionar novos campos:
     Adicionar no validade con controller
     Adicionar mensagem de validação e no arquivo pt-BR as traduções
     Adicionar a persistência com old()
+
+    Fazer o mesmo no formulário de edição

@@ -1,0 +1,41 @@
+.container_tools_all h3 {
+  background-color: #ddd;
+  padding: 15px;
+}
+.container_tools_all .message {
+  background-color: rgb(251, 197, 197);
+  padding: 15px;
+  margin: 5px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.container_tools_all table {
+  background-color: #eaeaea;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+.container_tools_all table th {
+  background-color: #999;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}
+.container_tools_all table td {
+  text-align: center;
+}
+.container_tools_all table td:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+}
+.container_tools_all table td:last-child a {
+  display: block;
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+}
+.container_tools_all table td:last-child a img {
+  height: 30px;
+  width: 30px;
+}

@@ -36,9 +36,8 @@
             </div>
 
             <button type="submit">ENTRAR</button>
+            <a href="{{ route('home') }}">Voltar</a>
         </form>
     </div>
-
-    
 </body>
 </html>

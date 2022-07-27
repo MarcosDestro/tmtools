@@ -15,8 +15,9 @@ mix
     .postCss('resources/css/app.css', 'public/css/', [
         //
     ])
-    .sass('resources/scss/style.scss', 'public/css/')
+    .sass('resources/scss/styles.scss', 'public/css/')
     .sass('resources/scss/login.scss', 'public/css/')
-    .sass('resources/scss/admintmtools.scss', 'public/css/')
+    .sass('resources/scss/toolsall.scss', 'public/css/')
+    .sass('resources/scss/createtools.scss', 'public/css/')
     // .copyDirectory('resources/svgs', 'public/svgs')
     ;

@@ -73,20 +73,13 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showTool($id)
     {
-        //
-    }
+        $tool = Tool::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return view('showTool', [
+            'tool' => $tool
+        ]);
     }
 
     /**
@@ -96,9 +89,18 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateTool(Request $request, $id)
     {
-        //
+        $newTool = Tool::find($id);
+        $newTool->fill($request->all());
+
+        if (!$newTool->save()) {
+            return redirect()->back()->withInput()->withError();
+        }
+
+        return redirect()->route('showtool', ['id' => $newTool->id])->with([
+            'message' => 'Ferramenta atualizado com sucesso!'
+        ]);
     }
 
     /**

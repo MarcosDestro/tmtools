@@ -1,6 +1,7 @@
 {
     "/css/app.css": "/css/app.css",
-    "/css/admintmtools.css": "/css/admintmtools.css",
+    "/css/createtools.css": "/css/createtools.css",
+    "/css/toolsall.css": "/css/toolsall.css",
     "/css/login.css": "/css/login.css",
-    "/css/style.css": "/css/style.css"
+    "/css/styles.css": "/css/styles.css"
 }

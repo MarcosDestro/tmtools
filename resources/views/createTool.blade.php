@@ -1,5 +1,9 @@
 @extends('layout.layout')
 
+@section('css')
+    <link rel="stylesheet" href="{{ url(asset('css/createtools.css')) }}">
+@endsection
+
 @section('content')
 
     <div class="container">

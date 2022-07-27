@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {!! $head ?? '' !!}
 
-    <link rel="stylesheet" href="{{ url(asset('css/admintmtools.css')) }}">
+    <link rel="stylesheet" href="{{ url(asset('css/styles.css')) }}">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    @hasSection ('css')
+        @yield('css')
+    @endif
 
 </head>
 <body>
