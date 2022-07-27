@@ -15,6 +15,7 @@ class LoginController extends Controller
             return redirect()->route('tmtoolsall');
         }
 
+        // Devolve a view
         return view('login');
     }
 
@@ -37,6 +38,7 @@ class LoginController extends Controller
             ]);
         }
 
+        // Prepara as credenciais
         $credentials = [
             'email' => $request->email,
             'password' => $request->password
@@ -59,7 +61,10 @@ class LoginController extends Controller
 
     private function authenticated(string $ip)
     {
+        // Procura o id do usuário
         $user = User::where('id', Auth::user()->id);
+
+        // Atualiza o ultimo login
         $user->update([
             'last_login_at' => date('Y-m-d H:i:s'),
             'last_login_ip' => $ip
